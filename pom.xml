@@ -12,6 +12,7 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>13</javafx.version>
     </properties>
     <build>
         <plugins>
@@ -43,4 +44,61 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-</project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                    <mainClass>idata2001.javafxtest.HelloWorld</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+        <dependencies>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>${javafx.version}</version>
+            </dependency>
+        </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+        </plugins>
+    </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                    <!--
+                    Tillegg for JLink
+                    -->
+                    <release>${maven.compiler.target}</release>
+                    <jlinkImageName>hellofx</jlinkImageName>
+                    <launcher>launcher</launcher>
+                    <!--
+                    Main-klassen i prosjektet ditt
+                    -->
+                    <mainClass>cardgame.{name of java fx main class)</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    </project>
