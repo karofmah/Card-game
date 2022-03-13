@@ -12,93 +12,40 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javafx.version>13</javafx.version>
+        <javafx.version>17.0.2</javafx.version>
     </properties>
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>0.0.3</version>
+            <configuration>
+
+                <release>${maven.compiler.target}</release>
+                <jlinkImageName>hellofx</jlinkImageName>
+                <launcher>launcher</launcher>
+
+                <mainClass>Mainclass</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+    <!--
+    Her legger vi inn avhengighet til JavaFX-biblioteket. Det er tilstrekkelig å legge inn
+    artifakten javafx-controls.
+    Her ser vi også hvordan vi kan opprette "variabler" i en POM-fil, og referere til variabelen senere.
+    ${javafx.version} refererer til "propertien" javafx.version som er definert under properties-delen
+    øverst i prosjektfilen.
+    -->
     <dependencies>
-
         <dependency>
-
-            <groupId>org.junit.jupiter</groupId>
-
-            <artifactId>junit-jupiter-engine</artifactId>
-
-            <version>5.8.2</version>
-
-            <scope>test</scope>
-
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.3</version>
-                <configuration>
-                    <mainClass>idata2001.javafxtest.HelloWorld</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
-
-        <dependencies>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-controls</artifactId>
-                <version>${javafx.version}</version>
-            </dependency>
-        </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-            </plugin>
-        </plugins>
-    </build>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.3</version>
-                <configuration>
-                    <!--
-                    Tillegg for JLink
-                    -->
-                    <release>${maven.compiler.target}</release>
-                    <jlinkImageName>hellofx</jlinkImageName>
-                    <launcher>launcher</launcher>
-                    <!--
-                    Main-klassen i prosjektet ditt
-                    -->
-                    <mainClass>cardgame.{name of java fx main class)</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    </project>
+</project>
