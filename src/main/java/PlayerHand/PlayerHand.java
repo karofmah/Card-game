@@ -11,4 +11,21 @@ public class PlayerHand {
     public PlayerHand(ArrayList<PlayingCard> hand){
         this.hand=hand;
     }
+
+    public int getNumberOfCards() {
+        return numberOfCards;
+    }
+
+    public ArrayList<PlayingCard> getHand() {
+        return hand;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayerHand{" +
+                "numberOfCards=" + numberOfCards +
+                ", hand=" + hand +
+                '}';
+    }
 }
+

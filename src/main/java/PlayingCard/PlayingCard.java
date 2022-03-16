@@ -43,5 +43,14 @@ public class PlayingCard {
     public int getFace() {
         return face;
     }
+
+    @Override
+    public String toString() {
+        return "PlayingCard{" +
+                "suit=" + suit +
+                ", face=" + face +
+                '}';
+    }
 }
+
 
