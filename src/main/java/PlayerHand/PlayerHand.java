@@ -16,6 +16,7 @@ public class PlayerHand {
     public ArrayList<PlayingCard> getHand() {
         return hand;
     }
+
     public int sumOfTheFaces() {
         int sumOfFaces= hand.stream().map(PlayingCard::getFace).reduce((a,b)->a+b).get();
         return sumOfFaces;

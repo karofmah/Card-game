@@ -2,14 +2,14 @@ import DeckOfCards.DeckOfCards;
 import PlayerHand.PlayerHand;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-public class DeckOfCardsTest {
-
-
+public class PlayerHandTest {
 
     @Test
-    public void cardsAreDealtProperly(){
+    public void calculateSumOfTheFaces(){
         DeckOfCards deck=new DeckOfCards();
         PlayerHand hand=new PlayerHand(deck.dealHand(5));
-        System.out.println(hand.getHand().toString());//Assert Test
+        System.out.println(hand.sumOfTheFaces());//Assert Test
     }
+
+
 }
