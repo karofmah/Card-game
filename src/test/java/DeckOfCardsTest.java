@@ -1,5 +1,5 @@
 import DeckOfCards.DeckOfCards;
-import PlayerHand.PlayerHand;
+import HandOfCards.HandOfCards;
 import PlayingCard.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DeckOfCardsTest {
 
     private DeckOfCards deck;
-    private PlayerHand hand;
+    private HandOfCards hand;
 
     @BeforeEach
     public void setup(){
         this.deck=new DeckOfCards();
-        this.hand=new PlayerHand(deck.dealHand(5));
+        this.hand=new HandOfCards(deck.dealHand(5));
     }
 
     @Test

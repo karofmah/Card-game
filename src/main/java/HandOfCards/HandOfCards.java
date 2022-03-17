@@ -1,4 +1,4 @@
-package PlayerHand;
+package HandOfCards;
 
 import PlayingCard.PlayingCard;
 
@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PlayerHand {
+public class HandOfCards {
     public ArrayList<PlayingCard> hand;
 
-    public PlayerHand(ArrayList<PlayingCard> hand){
+    public HandOfCards(ArrayList<PlayingCard> hand){
         this.hand=hand;
     }
 
