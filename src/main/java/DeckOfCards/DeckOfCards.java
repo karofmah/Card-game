@@ -21,14 +21,16 @@ public class DeckOfCards {
 
     public ArrayList<PlayingCard> dealHand(int n){
         ArrayList<PlayingCard> cardsDealt=new ArrayList();
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             Random randomCardIndex=new java.util.Random();
             cardsDealt.add(deck.get(randomCardIndex.nextInt(52)));
-            deck.remove(randomCardIndex);
+            deck.remove(deck.get(randomCardIndex.nextInt(52)));
         }
         return cardsDealt;
     }
-
+    public int getSize(){
+        return deck.size();
+    }
     @Override
     public String toString() {
         return "DeckOfCards{" +

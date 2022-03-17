@@ -31,7 +31,9 @@ public class PlayerHand {
     public boolean flush(){
         return hand.stream().allMatch(s->s.getSuit()=='S'||s.getSuit()=='H'||s.getSuit()=='D'||s.getSuit()=='C');
     }
-
+    public int getSize(){
+        return hand.size();
+    }
     @Override
     public String toString() {
         return "PlayerHand{" +
