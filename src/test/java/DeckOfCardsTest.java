@@ -17,7 +17,6 @@ public class DeckOfCardsTest {
 
     @Test
     public void cardsAreDealtProperly(){
-        deck.dealHand(5);
         assertEquals(47, deck.getSize());
         assertEquals(5, hand.getSize());
     }
@@ -40,9 +39,8 @@ public class DeckOfCardsTest {
     }
     @Test
     public void queenOfSpadesExists(){
-        deck.dealHand(5);
         for (PlayingCard card:hand.getHand()) {
-            if(card.getSuit()=='S'){
+            if(card.getSuit()=='S' && card.getFace()==12){
                 assertTrue(hand.queenOfSpades());
             }else {
                 assertFalse(hand.queenOfSpades());

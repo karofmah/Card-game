@@ -23,8 +23,8 @@ public class DeckOfCards {
         ArrayList<PlayingCard> cardsDealt=new ArrayList();
         for (int i = 0; i < n; i++) {
             Random randomCardIndex=new java.util.Random();
-            cardsDealt.add(deck.get(randomCardIndex.nextInt(52)));
-            deck.remove(deck.get(randomCardIndex.nextInt(52)));
+            cardsDealt.add(deck.get(randomCardIndex.nextInt(deck.size())));
+            deck.remove(deck.get(randomCardIndex.nextInt(deck.size())));
         }
         return cardsDealt;
     }

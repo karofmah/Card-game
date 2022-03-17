@@ -26,7 +26,7 @@ public class PlayerHand {
         return cardsOfHearts;
     }
     public boolean queenOfSpades(){
-        return hand.stream().anyMatch(p -> p.getSuit()=='S'&& p.getFace()== 12);
+        return hand.stream().anyMatch(p -> p.getSuit()=='S') && hand.stream().anyMatch(p -> p.getFace()==12);
     }
     public boolean flush(){
         return hand.stream().allMatch(s->s.getSuit()=='S'||s.getSuit()=='H'||s.getSuit()=='D'||s.getSuit()=='C');
