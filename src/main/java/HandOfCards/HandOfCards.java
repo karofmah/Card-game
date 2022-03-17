@@ -29,7 +29,7 @@ public class HandOfCards {
         return hand.stream().anyMatch(p -> p.getSuit()=='S') && hand.stream().anyMatch(p -> p.getFace()==12);
     }
     public boolean flush(){
-        return hand.stream().allMatch(s->s.getSuit()=='S'||s.getSuit()=='H'||s.getSuit()=='D'||s.getSuit()=='C');
+        return hand.stream().distinct().anyMatch(p->getSize()==1);//Alternativ løsning
     }
     public int getSize(){
         return hand.size();

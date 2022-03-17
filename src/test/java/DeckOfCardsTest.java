@@ -4,6 +4,9 @@ import PlayingCard.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 public class DeckOfCardsTest {
 
@@ -54,4 +57,16 @@ public class DeckOfCardsTest {
         }
     }
 
+    @Test
+    public void checkFlush(){
+        ArrayList<Character> suitsInHand=new ArrayList<Character>();
+            for (Character c:suitsInHand) {
+                if(!c.equals(suitsInHand.get(0)))
+                    assertFalse(hand.flush());
+
+            assertTrue(hand.flush());
+        }
+
+
+    }
 }
