@@ -12,8 +12,8 @@ public class PlayingCard {
      * @param face The face value of the card, an integer between 1 and 13
      */
     public PlayingCard(char suit, int face) {
-        this.suit = suit;
-        this.face = face;
+        this.suit = suit; // 'S'=spade, 'H'=heart, 'D'=diamonds, 'C'=clubs
+        this.face = face; // a number between 1 and 13
     }
 
     /**
