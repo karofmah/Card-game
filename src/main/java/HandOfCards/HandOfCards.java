@@ -51,7 +51,7 @@ public class HandOfCards {
      * @return boolean (true or false)
      */
     public boolean queenOfSpades(){
-        return hand.stream().anyMatch(p -> p.getSuit()=='S') && hand.stream().anyMatch(p -> p.getFace()==12);
+        return hand.stream().anyMatch(p -> p.getSuit()=='S' && p.getFace()==12);
     }
 
     /**
@@ -59,7 +59,10 @@ public class HandOfCards {
      * @return boolean (true or false)
      */
     public boolean flush(){
-        return hand.stream().distinct().anyMatch(p->getSize()==1);//Alternativ løsning
+        return hand.stream().distinct().anyMatch(p->p.getSuit()=='S')
+                || hand.stream().distinct().anyMatch(p->p.getSuit()=='H')
+                || hand.stream().distinct().anyMatch(p->p.getSuit()=='D')
+                || hand.stream().distinct().anyMatch(p->p.getSuit()=='C');
     }
 
     /**

@@ -21,6 +21,7 @@ public class DeckOfCardsTest {
         this.deck=new DeckOfCards();
         this.hand=new HandOfCards(deck.dealHand(5));
         this.emptyList=new ArrayList<PlayingCard>();
+        System.out.println(hand.getHand().toString());
     }
 
     @Nested
@@ -35,7 +36,6 @@ public class DeckOfCardsTest {
         @Test
         @DisplayName("Calculates the sum of faces in a hand ")
         public void calculateSumOfTheFaces() {
-            deck.dealHand(5);
             int expectedSumOfFaces = 0;
             for (PlayingCard card : hand.getHand()) {
                 expectedSumOfFaces += card.getFace();
@@ -57,22 +57,26 @@ public class DeckOfCardsTest {
         @DisplayName("Checks if queen of spades exists in a hand ")
         public void checkIfQueenOfSpadesExists() {
             for (PlayingCard card : hand.getHand()) {
-                if (card.getSuit() == 'S' && card.getFace() == 12) {
-                    assertTrue(hand.queenOfSpades());
-                } else {
+                if (!((card.getSuit() == 'S') && (card.getFace() == 12))) {
                     assertFalse(hand.queenOfSpades());
                 }
             }
+            assertTrue(hand.queenOfSpades());
         }
 
         @Test
         @DisplayName("Check if all cards in a hand are of the same suit")
         public void checkFlush() {
             ArrayList<Character> suitsInHand = new ArrayList<Character>();
+            suitsInHand.add('S');
+            suitsInHand.add('H');
+            suitsInHand.add('D');
+            suitsInHand.add('C');
+            System.out.println(suitsInHand);
             for (Character c : suitsInHand) {
-                if (!c.equals(suitsInHand.get(0)))
+                if (!c.equals(hand.getHand().get(0).getSuit())){
                     assertFalse(hand.flush());
-
+                }
                 assertTrue(hand.flush());//Fix Test
             }
         }
