@@ -47,7 +47,7 @@ public class DeckOfCardsTest {
         @DisplayName("Checks if the list that represents cards of hearts, only contains cards with suit of hearts")
         public void checkCardOfHearts() {
             deck.dealHand(5);
-            for (PlayingCard card : hand.cardOfHearts()) {
+            for (PlayingCard card : hand.cardsOfHearts()) {
                 System.out.println(card.toString());
                 assertEquals('H', card.getSuit());
             }

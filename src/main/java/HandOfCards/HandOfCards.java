@@ -49,9 +49,9 @@ public class HandOfCards {
 
     /**
      * Returns cards with the suit of hearts in hand
-     * @return cardOfHearts as a List
+     * @return cards Of Hearts as a List
      */
-    public List<PlayingCard> cardOfHearts(){
+    public List<PlayingCard> cardsOfHearts(){
         List<PlayingCard> cardsOfHearts= hand.stream().filter(p->p.getSuit()=='H').collect(Collectors.toList());
         return cardsOfHearts;
     }
@@ -77,7 +77,7 @@ public class HandOfCards {
 
     /**
      * Returns the number of cards in hand
-     * @return
+     * @return hand.size() as an int
      */
     public int getSize(){
         return hand.size();
