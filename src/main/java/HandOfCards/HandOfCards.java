@@ -28,6 +28,16 @@ public class HandOfCards {
         return hand;
     }
 
+    public void addNewCard(PlayingCard card){
+        hand.add(card);
+    }
+    public void removeCard(char suit,int face){
+        for (PlayingCard card: hand) {
+            if(card.getSuit()=='S' && card.getFace()==12){
+                hand.remove(card);
+            }
+        }
+    }
     /**
      * Calculates the sum of faces in hand
      * @return sumOfFaces as an int
@@ -59,10 +69,10 @@ public class HandOfCards {
      * @return boolean (true or false)
      */
     public boolean flush(){
-        return hand.stream().distinct().anyMatch(p->p.getSuit()=='S')
-                || hand.stream().distinct().anyMatch(p->p.getSuit()=='H')
-                || hand.stream().distinct().anyMatch(p->p.getSuit()=='D')
-                || hand.stream().distinct().anyMatch(p->p.getSuit()=='C');
+        return hand.stream().distinct().allMatch(p->p.getSuit()=='S')
+                || hand.stream().distinct().allMatch(p->p.getSuit()=='H')
+                || hand.stream().distinct().allMatch(p->p.getSuit()=='D')
+                || hand.stream().distinct().allMatch(p->p.getSuit()=='C');
     }
 
     /**

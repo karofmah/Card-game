@@ -54,31 +54,57 @@ public class DeckOfCardsTest {
         }
 
         @Test
-        @DisplayName("Checks if queen of spades exists in a hand ")
-        public void checkIfQueenOfSpadesExists() {
-            for (PlayingCard card : hand.getHand()) {
-                if (!((card.getSuit() == 'S') && (card.getFace() == 12))) {
-                    assertFalse(hand.queenOfSpades());
-                }
-            }
+        @DisplayName("Tests if existing queen of spades is detected in hand")
+        public void queenOfSpadesExists() {
+            hand.addNewCard(new PlayingCard('S',12));
+            System.out.println(hand.getHand());
             assertTrue(hand.queenOfSpades());
         }
-
         @Test
-        @DisplayName("Check if all cards in a hand are of the same suit")
-        public void checkFlush() {
-            ArrayList<Character> suitsInHand = new ArrayList<Character>();
-            suitsInHand.add('S');
-            suitsInHand.add('H');
-            suitsInHand.add('D');
-            suitsInHand.add('C');
-            System.out.println(suitsInHand);
-            for (Character c : suitsInHand) {
-                if (!c.equals(hand.getHand().get(0).getSuit())){
-                    assertFalse(hand.flush());
-                }
-                assertTrue(hand.flush());//Fix Test
-            }
+        @DisplayName("Tests if a missing queen of spades is detected in hand")
+        public void queenOfSpadesDoesNotExist(){
+            PlayingCard card=new PlayingCard('S',12);
+                hand.removeCard('S',12);
+                System.out.println(hand.getHand());
+                assertFalse(hand.queenOfSpades());
+
+
+        }
+        @Test
+        @DisplayName("Tests if all cards in a hand are of the same suit")
+        public void flushExists() {
+            hand.getHand().clear();
+            PlayingCard card=new PlayingCard('S',1);
+            PlayingCard card1=new PlayingCard('S',2);
+            PlayingCard card2=new PlayingCard('S',3);
+            PlayingCard card3=new PlayingCard('S',4);
+            PlayingCard card4=new PlayingCard('S',5);
+            hand.addNewCard(card);
+            hand.addNewCard(card1);
+            hand.addNewCard(card2);
+            hand.addNewCard(card3);
+            hand.addNewCard(card4);
+
+            System.out.println(hand.getHand());
+            assertTrue(hand.flush());
+
+        }
+        @Test
+        public void flushDoesNotExist(){
+            hand.getHand().clear();
+            PlayingCard card=new PlayingCard('S',1);
+            PlayingCard card1=new PlayingCard('H',2);
+            PlayingCard card2=new PlayingCard('D',3);
+            PlayingCard card3=new PlayingCard('C',4);
+            PlayingCard card4=new PlayingCard('S',5);
+            hand.addNewCard(card);
+            hand.addNewCard(card1);
+            hand.addNewCard(card2);
+            hand.addNewCard(card3);
+            hand.addNewCard(card4);
+
+            System.out.println(hand.getHand());
+            assertFalse(hand.flush());
         }
     }
     @Nested
