@@ -1,6 +1,4 @@
-package HandOfCards;
-
-import PlayingCard.PlayingCard;
+package cardgame.model;
 
 import java.util.ArrayList;
 import java.util.List;

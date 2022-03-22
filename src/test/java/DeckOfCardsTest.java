@@ -1,6 +1,6 @@
-import DeckOfCards.DeckOfCards;
-import HandOfCards.HandOfCards;
-import PlayingCard.PlayingCard;
+import cardgame.model.DeckOfCards;
+import cardgame.model.HandOfCards;
+import cardgame.model.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

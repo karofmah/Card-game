@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="834.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
+   <children>
+      <TableView layoutX="81.0" layoutY="351.0" prefHeight="419.0" prefWidth="743.0">
+        <columns>
+          <TableColumn prefWidth="776.0" text="Cards in hand" />
+        </columns>
+      </TableView>
+      <Button fx:id="checkHandBtn" layoutX="955.0" layoutY="614.0" mnemonicParsing="false" onAction="#checkHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Check hand" />
+      <Button fx:id="dealHandBtn" layoutX="955.0" layoutY="417.0" mnemonicParsing="false" onAction="#dealHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Deal hand" />
+      <Text layoutX="81.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sum of the faces:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="453.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Queen of spades:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="81.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flush:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="453.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card of hearts:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

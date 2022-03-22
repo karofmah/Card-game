@@ -1,4 +1,4 @@
-package PlayingCard;
+package cardgame.model;
 
 public class PlayingCard {
     private final char suit; // 'S'=spade, 'H'=heart, 'D'=diamonds, 'C'=clubs
