@@ -8,10 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="834.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
+<AnchorPane prefHeight="913.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
    <children>
-      <Button fx:id="checkHandBtn" layoutX="955.0" layoutY="530.0" mnemonicParsing="false" onAction="#checkHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Check hand" />
-      <Button fx:id="dealHandBtn" layoutX="955.0" layoutY="417.0" mnemonicParsing="false" onAction="#dealHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Deal hand" />
+      <Button fx:id="checkHandBtn" layoutX="955.0" layoutY="410.0" mnemonicParsing="false" onAction="#checkHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Check hand" />
+      <Button fx:id="dealHandBtn" layoutX="955.0" layoutY="310.0" mnemonicParsing="false" onAction="#dealHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Deal hand" />
       <Text layoutX="81.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sum of the faces:">
          <font>
             <Font size="22.0" />
@@ -55,11 +55,12 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label fx:id="txtHandEmpty" layoutX="691.0" layoutY="98.0" prefHeight="125.0" prefWidth="449.0">
+      <Label fx:id="txtHandEmpty" layoutX="832.0" layoutY="66.0" prefHeight="122.0" prefWidth="372.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="resetHandBtn" layoutX="955.0" layoutY="660.0" mnemonicParsing="false" onAction="#checkHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Reset hand" />
+      <Button fx:id="resetHandBtn" layoutX="679.0" layoutY="410.0" mnemonicParsing="false" onAction="#resetHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Reset" />
+      <ImageView fitHeight="196.0" fitWidth="221.0" layoutX="54.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

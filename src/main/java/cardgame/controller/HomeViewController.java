@@ -30,7 +30,8 @@ public class HomeViewController {
     public Label txtHand;
     public Label txtHandEmpty;
     @FXML
-    private Button resetHandBtn;
+    private Button resetBtn;
+
     @FXML // fx:id="checkHandBtn"
     private Button checkHandBtn; // Value injected by FXMLLoader
 
@@ -41,15 +42,15 @@ public class HomeViewController {
     HandOfCards hand;
     @FXML
     public void checkHandBtnClicked() {
-        if(hand==null){
+        if(hand.getHand().isEmpty()){
             txtHandEmpty.setText("Hand is empty, please deal hand first");
+        }else {
+            txtCardOfHearts.setText(hand.cardsOfHearts().toString());
+            txtQueenOfSpades.setText(Boolean.toString(hand.queenOfSpades()));
+            txtSumOfFaces.setText(Integer.toString(hand.sumOfTheFaces()));
+            txtFlush.setText(Boolean.toString(hand.flush()));
+            System.out.println("Checked hand!");
         }
-        txtHandEmpty.setText("");
-        txtCardOfHearts.setText(hand.cardsOfHearts().toString());
-        txtQueenOfSpades.setText(Boolean.toString(hand.queenOfSpades()));
-        txtSumOfFaces.setText(Integer.toString(hand.sumOfTheFaces()));
-        txtFlush.setText(Boolean.toString(hand.flush()));
-        System.out.println("Checked hand!");
     }
 
     @FXML
@@ -60,14 +61,23 @@ public class HomeViewController {
     }
 
     @FXML
-    void resetHandBtnClicked(ActionEvent event) {
-    hand.getHand().clear();
+    void resetHandBtnClicked(){
+        deck.getSize();
+        deck=new DeckOfCards();
+        hand.getHand().clear();
+        txtHandEmpty.setText("");
+        txtCardOfHearts.setText("");
+        txtQueenOfSpades.setText("");
+        txtSumOfFaces.setText("");
+        txtFlush.setText("");
+        txtHand.setText("");
         System.out.println("Hand reset!");
     }
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert checkHandBtn != null : "fx:id=\"checkHandBtn\" was not injected: check your FXML file 'homeView.fxml'.";
         assert dealHandBtn != null : "fx:id=\"dealHandBtn\" was not injected: check your FXML file 'homeView.fxml'.";
+        assert dealHandBtn != null : "fx:id=\"resetHandBtn\" was not injected: check your FXML file 'homeView.fxml'.";
         deck=new DeckOfCards();
     }
 
