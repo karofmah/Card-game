@@ -27,7 +27,10 @@ public class HomeViewController {
     public Label txtQueenOfSpades;
     public Label txtCardOfHearts;
     public Label txtFlush;
-
+    public Label txtHand;
+    public Label txtHandEmpty;
+    @FXML
+    private Button resetHandBtn;
     @FXML // fx:id="checkHandBtn"
     private Button checkHandBtn; // Value injected by FXMLLoader
 
@@ -37,8 +40,11 @@ public class HomeViewController {
     DeckOfCards deck;
     HandOfCards hand;
     @FXML
-    public void checkHandBtnClicked(javafx.event.ActionEvent event) {
-
+    public void checkHandBtnClicked() {
+        if(hand==null){
+            txtHandEmpty.setText("Hand is empty, please deal hand first");
+        }
+        txtHandEmpty.setText("");
         txtCardOfHearts.setText(hand.cardsOfHearts().toString());
         txtQueenOfSpades.setText(Boolean.toString(hand.queenOfSpades()));
         txtSumOfFaces.setText(Integer.toString(hand.sumOfTheFaces()));
@@ -47,12 +53,17 @@ public class HomeViewController {
     }
 
     @FXML
-    public void dealHandBtnClicked(javafx.event.ActionEvent event) {
+    public void dealHandBtnClicked() {
         hand=new HandOfCards(deck.dealHand(5));
+        txtHand.setText(hand.getHand().toString());
         System.out.println("Dealt hand!");
     }
 
-
+    @FXML
+    void resetHandBtnClicked(ActionEvent event) {
+    hand.getHand().clear();
+        System.out.println("Hand reset!");
+    }
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert checkHandBtn != null : "fx:id=\"checkHandBtn\" was not injected: check your FXML file 'homeView.fxml'.";
