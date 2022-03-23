@@ -30,6 +30,7 @@ public class HomeViewController {
     public Label txtHand;
     public Label txtHandEmpty;
     public Label txtNrCardsDeck;
+    public Label txtFewCardsInDeck;
     @FXML
     private Button resetBtn;
 
@@ -43,7 +44,7 @@ public class HomeViewController {
     HandOfCards hand;
     @FXML
     public void checkHandBtnClicked() {
-        if(hand==null){
+        if(hand==null ||hand.getHand().isEmpty()){
             txtHandEmpty.setText("Hand is empty, please deal hand first");
         }else {
             txtCardOfHearts.setText(hand.cardsOfHearts().toString());
@@ -57,10 +58,16 @@ public class HomeViewController {
 
     @FXML
     public void dealHandBtnClicked() {
-        hand=new HandOfCards(deck.dealHand(5));
-        txtHand.setText(hand.getHand().toString());
-        txtNrCardsDeck.setText(Integer.toString(deck.getSize()));
-        System.out.println("Dealt hand!");
+        if (deck.getSize() < 5) {
+            txtFewCardsInDeck.setText("There are not enough cards in deck to deal hand, please reset");
+        }
+        else {
+            hand = new HandOfCards(deck.dealHand(5));
+            txtHandEmpty.setText("");
+            txtHand.setText(hand.getHand().toString());
+            txtNrCardsDeck.setText(Integer.toString(deck.getSize()));
+            System.out.println(deck);
+        }
     }
 
     @FXML
@@ -74,6 +81,7 @@ public class HomeViewController {
         txtSumOfFaces.setText("");
         txtFlush.setText("");
         txtHand.setText("");
+        txtFewCardsInDeck.setText("");
         txtNrCardsDeck.setText(Integer.toString(deck.getSize()));
         System.out.println("Hand reset!");
     }
