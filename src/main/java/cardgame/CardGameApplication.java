@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Logger;
 
+/**
+ * Application for Card game
+ */
 public class CardGameApplication extends Application {
     public static Stage stage;
 
@@ -42,5 +45,6 @@ public class CardGameApplication extends Application {
         stage.show();
 
     }
+
 
 }

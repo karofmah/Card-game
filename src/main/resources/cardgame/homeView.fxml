@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="834.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
    <children>
-      <TableView layoutX="81.0" layoutY="351.0" prefHeight="419.0" prefWidth="743.0">
+      <TableView fx:id="txtHand" layoutX="81.0" layoutY="351.0" prefHeight="419.0" prefWidth="743.0">
         <columns>
           <TableColumn prefWidth="776.0" text="Cards in hand" />
         </columns>
@@ -36,5 +36,9 @@
             <Font size="22.0" />
          </font>
       </Text>
+      <Label fx:id="txtSumOfFaces" layoutX="276.0" layoutY="118.0" prefHeight="27.0" prefWidth="129.0" />
+      <Label fx:id="txtQueenOfSpades" layoutX="649.0" layoutY="251.0" prefHeight="27.0" prefWidth="129.0" />
+      <Label fx:id="txtCardOfHearts" layoutX="603.0" layoutY="113.0" prefHeight="94.0" prefWidth="390.0" />
+      <Label fx:id="txtFlush" layoutX="147.0" layoutY="244.0" prefHeight="27.0" prefWidth="129.0" />
    </children>
 </AnchorPane>
