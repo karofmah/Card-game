@@ -7,6 +7,7 @@ module cardgame {
     opens cardgame to javafx.fxml;
     exports cardgame.controller;
     exports cardgame;
+    exports cardgame.model;
 
 
 }

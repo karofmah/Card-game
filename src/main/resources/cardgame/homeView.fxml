@@ -36,7 +36,10 @@
          <font>
             <Font size="22.0" />
          </font></Label>
-      <Label fx:id="txtQueenOfSpades" layoutX="649.0" layoutY="251.0" prefHeight="27.0" prefWidth="129.0" />
+      <Label fx:id="txtQueenOfSpades" layoutX="649.0" layoutY="251.0" prefHeight="27.0" prefWidth="129.0">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
       <Label fx:id="txtCardOfHearts" layoutX="603.0" layoutY="113.0" prefHeight="94.0" prefWidth="390.0">
          <font>
             <Font size="22.0" />
