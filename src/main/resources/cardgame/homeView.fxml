@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="913.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
+<AnchorPane prefHeight="630.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardgame.controller.HomeViewController">
    <children>
       <Button fx:id="checkHandBtn" layoutX="955.0" layoutY="410.0" mnemonicParsing="false" onAction="#checkHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Check hand" />
       <Button fx:id="dealHandBtn" layoutX="955.0" layoutY="310.0" mnemonicParsing="false" onAction="#dealHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Deal hand" />
@@ -61,6 +61,12 @@
          </font>
       </Label>
       <Button fx:id="resetHandBtn" layoutX="679.0" layoutY="410.0" mnemonicParsing="false" onAction="#resetHandBtnClicked" prefHeight="73.0" prefWidth="199.0" text="Reset" />
-      <ImageView fitHeight="196.0" fitWidth="221.0" layoutX="54.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="236.0" fitWidth="228.0" layoutX="69.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Playing_cards_collage.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="69.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card in deck:" wrappingWidth="112.744140625" />
+      <Label fx:id="txtNrCardsDeck" layoutX="185.0" layoutY="558.0" prefHeight="40.0" prefWidth="91.0" />
    </children>
 </AnchorPane>

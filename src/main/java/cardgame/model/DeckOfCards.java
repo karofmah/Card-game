@@ -44,6 +44,9 @@ public class DeckOfCards {
         return deck.size();
     }
 
+    public ArrayList<PlayingCard> getDeck(){
+        return deck;
+    }
     @Override
     public String toString() {
         return "DeckOfCards{" +
